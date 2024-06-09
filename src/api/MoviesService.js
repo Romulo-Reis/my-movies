@@ -18,4 +18,15 @@ export class MoviesService {
             }
         });
     }
+
+    static getMovieById(id){
+        return axios({
+            method:'get',
+            url: withBaseUrl(`movie/${id}`),
+            headers: {
+                'accept': 'application/json',
+                'Authorization': `Bearer ${ACCESS_TOKEN}`
+            }
+        });
+    }
 }
